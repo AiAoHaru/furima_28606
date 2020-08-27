@@ -18,7 +18,7 @@
 ### Association
 - has_many :items
 - has_many :comments, dependent::destroy
-- has_one :purchaser
+- has_many :purchasers
 
 ## items テーブル
 
