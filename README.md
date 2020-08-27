@@ -4,32 +4,21 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column              | Type   | Options     |
+| ------------------- | ------ | ----------- |
+| nickname            | string | null: false |
+| email               | string | null: false |
+| password            | string | null: false |
+| family_name         | string | null: false |
+| last_name           | string | null: false |
+| family_name_reading | string | null: false |
+| last_name_reading   | string | null: false |
+| birth_date          | date   | null: false |
 
 ### Association
 - has_many :items
 - has_many :comments, dependent::destroy
-- has_one :profile
 - has_one :purchaser
-
-
-## profiles テーブル
-
-| Column              | Type       | Options                        |
-| ------------------- | ---------- | ------------------------------ |
-| family_name         | string     | null: false                    |
-| last_name           | string     | null: false                    |
-| family_name_reading | string     | null: false                    |
-| last_name_reading   | string     | null: false                    |
-| birth_date          | date       | null: false                    |
-| user                | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
 
 ## items テーブル
 
