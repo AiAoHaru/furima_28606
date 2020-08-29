@@ -16,10 +16,10 @@ class User < ApplicationRecord
   VALID_NAME_READING_REGEX = /\A[ァ-ヶー－]+\z/.freeze
 
 # エラーメッセージ
-  ERROR_MESSAGE_EMAIL = "is invalid. input email correctly."   # （メールアドレスを正しく入力してください）"
-  ERROR_MESSAGE_PASSWORD = "is invalid. input half-width characters."    # （パスワードは、半角英数字で入力してください）"
-  ERROR_MESSAGE_NAME = "is invalid. input full-width characters."    # （お名前は、全角で入力してください）"
-  ERROR_MESSAGE_NAME_READING = "is invalid. input full-width katakana characters."   # （お名前カナは、全角カナで入力してください）"
+  ERROR_MESSAGE_EMAIL = "is invalid. Input email correctly."   # （メールアドレスを正しく入力してください）"
+  ERROR_MESSAGE_PASSWORD = "is invalid. Include both letters and numbers."    # （パスワードは、半角英数字混合で入力してください）"
+  ERROR_MESSAGE_NAME = "is invalid. Input Full-width characters."    # （お名前は、全角で入力してください）"
+  ERROR_MESSAGE_NAME_READING = "is invalid. Input Full-width katakana characters."   # （お名前カナは、全角カナで入力してください）"
 
 # バリデーション
   with_options presence: true do    # with_optionsで全てのバリデーションに共通したオプション（presence: true）をdo~endで指定したものに付ける
