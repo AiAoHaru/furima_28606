@@ -1,0 +1,2 @@
+class HandlingTime < ApplicationRecord
+end
