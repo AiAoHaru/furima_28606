@@ -6,7 +6,7 @@ FactoryBot.define do
     family_name_reading { 'スズキ' }
     last_name_reading { 'イチロウ' }
     email {Faker::Internet.free_email}
-    password { Faker::Internet.password(min_length: 6) }
+    password { '1Aa'+Faker::Internet.password(min_length: 6) }
     password_confirmation {password}
     birth_date { Faker::Date.between(from: '1930-01-01', to: '2015-12-31') }
   end
@@ -18,3 +18,5 @@ end
 # password = Faker::Internet.password(min_length: 6)
 # password {password}
 # password_confirmation {password}
+
+# Fakerでパスワードを生成する際は、全て英字のみになるケースも存在する。パスワードで英数字混合のテストを実行する際は、9行目のように 「 '1Aa'+ 」と記載を足してあげることで、ランダム生成に足すことができる。
