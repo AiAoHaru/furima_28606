@@ -61,3 +61,8 @@ gem 'devise'
 gem 'pry-rails'
 gem 'active_hash'
 gem 'mini_magick'
+
+# 静的アセットファイルやログの保存先をHeroku用に微調整するGem
+group :production do
+  gem 'rails_12factor'
+end
