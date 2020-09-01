@@ -9,7 +9,5 @@ FactoryBot.define do
     handling_time_id { Faker::Number.between(from: 1, to: 3) }
     price { Faker::Number.between(from: 300, to: 9999999) }
     association :user
-
-    # image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'public/images/test_image.png')) }
   end
 end
