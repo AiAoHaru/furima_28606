@@ -16,6 +16,19 @@ class ItemsController < ApplicationController
       render :new    # バリデーションに弾かれた時
     end
   end
+  
+    def destroy
+    end
+    
+    def edit
+    end
+    
+    def update
+    end
+    
+    def show
+      @item = Item.find(params[:id])
+    end
 
   private
 
