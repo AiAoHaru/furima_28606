@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    # binding.pry  ( =>Item.includes(:user) )
     @items = Item.includes(:user)
   end
 
