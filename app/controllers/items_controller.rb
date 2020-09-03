@@ -17,24 +17,24 @@ class ItemsController < ApplicationController
     end
   end
   
-    def destroy
-      item = Item.find(params[:id])
-      if item.destroy   # 削除が完了した時
-        return redirect_to root_path
-      else   # 削除に失敗した時
-        redirect_to  :show
-      end
+  def destroy
+    item = Item.find(params[:id])
+    if item.destroy   # 削除が完了した時
+      return redirect_to root_path
+    else   # 削除に失敗した時
+      redirect_to  :show
     end
-    
-    def edit
-    end
-    
-    def update
-    end
-    
-    def show
-      @item = Item.find(params[:id])
-    end
+  end
+  
+  def edit
+  end
+  
+  def update
+  end
+  
+  def show
+    @item = Item.find(params[:id])
+  end
 
   private
 
