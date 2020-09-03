@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 # アソシエーション
   belongs_to :user
-  has_one :purchaser
+  has_one :purchaser, dependent: :destroy   # 購入済みの商品について、出品者が削除した場合に、購入者情報も一緒に削除させる設定
 
   # ActiveStorage
   has_one_attached :image
