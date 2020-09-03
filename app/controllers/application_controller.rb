@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
 
-  before_action :authenticate_user!, except: [:index] #ログイン済みか判断し、ログインしていないユーザーに対して、サインアップ画面に遷移させるための記述。
+  before_action :authenticate_user!, except: [:index, :show] #ログイン済みか判断し、ログインしていないユーザーに対して、サインアップ画面に遷移させるための記述。（未ログインユーザーのトップ画面及び商品詳細画面は閲覧可能）
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
