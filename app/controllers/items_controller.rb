@@ -64,7 +64,6 @@ class ItemsController < ApplicationController
   
   # before_action（本人以外の直リンクを禁止）
   def corrent_user
-    @item = Item.find(params[:id])
     if current_user.id != @item.user_id
       redirect_to root_path 
     end
