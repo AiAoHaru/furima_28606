@@ -20,8 +20,6 @@ const pay = () => {
         const tokenObj = `<input value=${token} type="hidden" name='item_order[token]'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
       }
-      // console.log(response)
-      // debugger
       document.getElementById("card-number").removeAttribute("name");    // パラメーターとして送られないように、値を削除
       document.getElementById("card-cvc").removeAttribute("name");
       document.getElementById("card-exp-month").removeAttribute("name");
