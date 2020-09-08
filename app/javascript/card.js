@@ -17,7 +17,7 @@ const pay = () => {
       if (status == 200) {    // HTTPステータスコードが正常（PAY.JP側の処理でトークンの生成に成功）だった場合、if文の{...}のコードを実行
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
-        const tokenObj = `<input value=${token} type="hidden" name='token'>`;
+        const tokenObj = `<input value=${token} type="hidden" name='item_order[token]'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
       }
       // console.log(response)
