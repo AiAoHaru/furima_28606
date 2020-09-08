@@ -39,7 +39,7 @@ RSpec.describe ItemOrder, type: :model do
       expect(@item_order.errors.full_messages).to include("City can't be blank")
     end
 
-    it "番地【house_number】が空でも登録できないこと" do
+    it "番地【house_number】が空では登録できないこと" do
       @item_order.house_number = nil
       @item_order.valid?
       expect(@item_order.errors.full_messages).to include("House number can't be blank")
