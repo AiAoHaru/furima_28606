@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:item_order).permit(:price, :token, :zip_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :purchaser_id).merge(user_id: current_user.id, item_id: params[:item_id], )   # :tokenとは、card.jsで定義しているname属性のこと
+    params.require(:item_order).permit(:token, :zip_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :purchaser_id).merge(user_id: current_user.id, item_id: params[:item_id], )   # :tokenとは、card.jsで定義しているname属性のこと
   end
 
   def pay_item
@@ -34,7 +34,6 @@ class OrdersController < ApplicationController
       currency:'jpy'           # 通貨の種類(日本円)
     )
   end
-
 
   # before_action
   def set_item
