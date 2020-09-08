@@ -1,14 +1,14 @@
 class ItemOrder
 
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :zip_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :item_id, :purchaser_id#,:price
+  attr_accessor :user_id, :item_id, :zip_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :item_id, :purchaser_id, :token
 
 
 # 正規表現
   # Addressに関する正規表現
-  VALID_ZIP_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze   # 郵便番号（「-」を含む且つ7桁）  # /\A[0-9]{3}-[0-9]{4}\z/i 
+  VALID_ZIP_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze     # 郵便番号（「-」を含む且つ7桁）  # /\A[0-9]{3}-[0-9]{4}\z/i 
   VALID_NAME_REGEX = /\A[ぁ-んァ-ンー-龥]+\z/i.freeze   # 全角ひらがな、全角カタカナ、漢字
-  VALID_PHONE_NUMBER_REGEX = /\A[0-9]{11}\z/i.freeze   # 電話番号（半角数字で11桁）
+  VALID_PHONE_NUMBER_REGEX = /\A\d{10,11}\z/.freeze     # 携帯番号(「-」無し10桁or11桁)      # /\A[0-9]{11}\z/i.freeze   # 電話番号（半角数字で11桁）
 
 
 # エラーメッセージ
@@ -17,6 +17,8 @@ class ItemOrder
 
 
 # バリデーション
+  # card決済に関するバリデーション
+  validates :token, presence: true
   # Addressに関するバリデーション
   with_options presence: true do    # with_optionsで全てのバリデーションに共通したオプション（presence: true）をdo~endで指定したものに付ける
     validates :zip_code, format: {with: VALID_ZIP_CODE_REGEX}
