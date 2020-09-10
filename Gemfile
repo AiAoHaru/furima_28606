@@ -68,3 +68,4 @@ group :production do
 end
 
 gem 'payjp'
+gem "aws-sdk-s3", require: false
