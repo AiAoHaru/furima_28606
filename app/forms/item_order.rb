@@ -11,10 +11,13 @@ class ItemOrder
   VALID_PHONE_NUMBER_REGEX = /\A\d{10,11}\z/.freeze     # 携帯番号(「-」無し10桁or11桁)      # /\A[0-9]{11}\z/i.freeze   # 電話番号（半角数字で11桁）
 
 
-# エラーメッセージ
+# エラーメッセージ（英語）
   # Addressに関するエラーメッセージ
-  ERROR_MESSAGE_SELECT_LIST = "Select an item from a list."   # （リストから選択してください）"
+  # ERROR_MESSAGE_SELECT_LIST = "Select an item from a list."   # （リストから選択してください）"
 
+# エラーメッセージ（日本語）
+  # Addressに関するエラーメッセージ
+  ERROR_MESSAGE_SELECT_LIST_JA = "を選択してください"   # （リストから選択してください）"
 
 # バリデーション
   # card決済に関するバリデーション
@@ -22,7 +25,7 @@ class ItemOrder
   # Addressに関するバリデーション
   with_options presence: true do    # with_optionsで全てのバリデーションに共通したオプション（presence: true）をdo~endで指定したものに付ける
     validates :zip_code, format: {with: VALID_ZIP_CODE_REGEX}
-    validates :prefecture_id, numericality: { other_than: 0, message: ERROR_MESSAGE_SELECT_LIST}  # ActiveHashの選択が「--」の時は保存できないようにする
+    validates :prefecture_id, numericality: { other_than: 0, message: ERROR_MESSAGE_SELECT_LIST_JA}  # ActiveHashの選択が「--」の時は保存できないようにする
     validates :city
     validates :house_number
     validates :phone_number, format: {with: VALID_PHONE_NUMBER_REGEX}
