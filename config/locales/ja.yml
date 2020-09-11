@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        family_name: お名前(全角)
+        last_name: お名前(全角)
+        family_name_reading: お名前カナ(全角) 
+        last_name_reading: お名前カナ(全角) 
+        birth_date: 生年月日
+      item:
+        image: 出品画像
+        name: 商品名
+        description: 商品の説明
+        price: 金額
+        category_id: カテゴリー
+        condition_id: 商品の状態
+        handling_time_id: 発送までの日数
+        postage_payer_id: 配送料の負担
+        prefecture_id: 都道府県
+  activemodel:
+    attributes:
+      item_order:
+        token: クレジットカード情報
+        zip_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        house_number: 番地
+        building_name: 建物名 
+        phone_number: 電話番号

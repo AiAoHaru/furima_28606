@@ -69,3 +69,5 @@ end
 
 gem 'payjp'
 gem "aws-sdk-s3", require: false
+# 日本語に対応するためのGem
+gem 'rails-i18n'
