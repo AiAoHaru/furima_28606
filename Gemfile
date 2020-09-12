@@ -64,7 +64,7 @@ gem 'mini_magick'
 
 # 静的アセットファイルやログの保存先をHeroku用に微調整するGem
 group :production do
-  gem 'rails_12factor'
+  # gem 'rails_12factor'
   gem 'unicorn', '5.4.1'
 
 end
