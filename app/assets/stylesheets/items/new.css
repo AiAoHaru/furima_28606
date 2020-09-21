@@ -227,3 +227,9 @@
 .inc {
   font-size: 13px;
 }
+
+/* アップロード画像のリサイズ */
+.resize_image {
+  max-width: 50vw;
+  max-height: fit-content;
+}

@@ -11,7 +11,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       blobImage.setAttribute('src', blob);
 
       // 生成したHTMLの要素をブラウザに表示させる
-      imageElement.appendChild(blobImage);
+      imageElement.appendChild(blobImage).setAttribute("class", "resize_image");;
       ImageList.appendChild(imageElement);
     };
 
