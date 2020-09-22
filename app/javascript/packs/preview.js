@@ -11,15 +11,15 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       blobImage.setAttribute('src', blob);
 
       // 生成したHTMLの要素をブラウザに表示させる
-      imageElement.appendChild(blobImage).setAttribute("class", "resize_image");;
+      imageElement.appendChild(blobImage).setAttribute("class", "resize_image");
       ImageList.appendChild(imageElement);
     };
 
     document.getElementById('item-image').addEventListener('change', function(e){
       // 画像が表示されている場合のみ、すでに存在している画像を削除する
       const imageContent = document.querySelector('img');
-      if (imageContent[1]){
-        imageContent[1].remove();
+      if (imageContent){
+        imageContent.remove();
       }
 
       const file = e.target.files[0];
